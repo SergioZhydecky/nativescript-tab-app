@@ -1,0 +1,21 @@
+<StackLayout>
+	<GridLayout class="grid-tab-view" columns="*,*,*" ios:rows="*, 50, 0"
+	            android:rows="*, 200, 50">
+		<GridLayout class="my-tab-outlet" row="{{tabSelectedIndex === 0 ? 0 : 3}}" col="0" colspan="3">
+			<page-router-outlet name="featured"></page-router-outlet>
+		</GridLayout>
+		<GridLayout class="my-tab-outlet" row="{{tabSelectedIndex === 1 ? 0 : 3}}" col="0" colspan="3">
+			<page-router-outlet name="browse"></page-router-outlet>
+		</GridLayout>
+		<GridLayout class="my-tab-outlet" row="{{tabSelectedIndex === 2 ? 0 : 3}}" col="0" colspan="3">
+			<page-router-outlet name="search"></page-router-outlet>
+		</GridLayout>
+
+		<label row="1" col="0" class="tab-button" text="Tab1" (tap)="switchTabByIndex(0)"
+		       [ngClass]="{'selected': tabSelectedIndex === 0}"></label>
+		<label row="1" col="1" class="tab-button" text="Tab2" (tap)="switchTabByIndex(1)"
+		       [ngClass]="{'selected': tabSelectedIndex === 1}"></label>
+		<label row="1" col="2" class="tab-button" text="Tab3" (tap)="switchTabByIndex(2)"
+		       [ngClass]="{'selected': tabSelectedIndex===2}"></label>
+	</GridLayout>
+</StackLayout>

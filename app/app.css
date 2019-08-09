@@ -27,6 +27,7 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 .tab-button{
     z-index: 10;
+    background-color: yellow;
 }
 .selected {
     background-color: red;

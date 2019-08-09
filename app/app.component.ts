@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
               private activatedRoute: ActivatedRoute) {
     this.router.router.events.pipe(
       filter(e => e instanceof NavigationEnd),
-      tap(() => {
-        console.log(this.activatedRoute.root.children);
+      tap((e:any) => {
+        console.log(e.urlAfterRedirects);
       })
     ).subscribe(d => {
       console.log('nav end')
@@ -42,8 +42,13 @@ export class AppComponent implements OnInit {
     });
   }
 
-  switchTabByIndex(index: number) {
-    this.tabSelectedIndex = index;
+  test() {
+    this.router.navigate(['main', {outlets: { featured:'featured/item', browse: 'browse', search: 'search'}}],
+      {relativeTo: this.activatedRoute});
   }
+
+  // switchTabByIndex(index: number) {
+  //   this.tabSelectedIndex = index;
+  // }
 
 }

@@ -9,6 +9,7 @@ import { BrowseComponent } from "./browse.component";
 import { CategoryComponent } from "./category.component";
 import { SearchComponent } from "./search.component";
 import { BackComponent } from '~/back.component';
+import { MainComponent } from '~/main.component';
 
 @NgModule({
   bootstrap: [
@@ -20,12 +21,6 @@ import { BackComponent } from '~/back.component';
   ],
   declarations: [
     AppComponent,
-    FeaturedComponent,
-    ItemComponent,
-    BrowseComponent,
-    CategoryComponent,
-    SearchComponent,
-    BackComponent
   ],
   schemas: [
     NO_ERRORS_SCHEMA
